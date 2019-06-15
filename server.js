@@ -3,6 +3,8 @@ const express = require('express'),
       server = require('http').createServer(app);
       io = require('socket.io')(server);
 
+const port=process.env.PORT || 3000;
+
 let timerId = null,
     sockets = new Set();
 
@@ -32,9 +34,6 @@ io.on('connection', socket => {
   });
 
 });
-app.get('/', function(req, res) {
-  res.send((((Math.random() * 50) + 1).toFixed(2)));
-});
 
 function startTimer() {
   //Simulate stock data received by the server that needs 
@@ -57,5 +56,5 @@ function startTimer() {
   }, 2000);
 }
 
-server.listen(80);
-console.log('Visit http://localhost:80 in your browser');
+server.listen(port);
+console.log('Visit http://localhost in your browser');
