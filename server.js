@@ -56,5 +56,7 @@ function startTimer() {
   }, 2000);
 }
 
-server.listen(port);
+server.listen(port,() => {
+console.log(`Server running at port `+port);
+});
 console.log('Visit http://localhost in your browser');
