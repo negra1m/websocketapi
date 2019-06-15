@@ -32,6 +32,9 @@ io.on('connection', socket => {
   });
 
 });
+app.get('/', function(req, res) {
+  res.send((((Math.random() * 50) + 1).toFixed(2)));
+});
 
 function startTimer() {
   //Simulate stock data received by the server that needs 
@@ -42,7 +45,7 @@ function startTimer() {
       timerId = null;
       console.log(`Timer stopped`);
     }
-    let value = ((Math.random() * 50) + 1).toFixed(2);
+    var value = ((Math.random() * 50) + 1).toFixed(2);
     //See comment above about using a "room" to emit to an entire
     //group of sockets if appropriate for your scenario
     //This example tracks each socket and emits to each one
@@ -55,4 +58,4 @@ function startTimer() {
 }
 
 server.listen(80);
-console.log('Visit http://localhost in your browser');
+console.log('Visit http://localhost:80 in your browser');
