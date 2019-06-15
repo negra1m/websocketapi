@@ -3,7 +3,7 @@ const express = require('express'),
       server = require('http').createServer(app);
       io = require('socket.io')(server);
 
-const port=process.env.PORT || 3000;
+const port=process.env.PORT || 443;
 
 let timerId = null,
     sockets = new Set();
