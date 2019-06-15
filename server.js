@@ -54,5 +54,5 @@ function startTimer() {
   }, 2000);
 }
 
-server.listen(8080);
-console.log('Visit http://localhost:8080 in your browser');
+server.listen(80);
+console.log('Visit http://localhost in your browser');
